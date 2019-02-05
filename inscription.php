@@ -22,19 +22,27 @@
         height: 95vh;
         justify-content: center;
         align-items: center;
-
+        background-image: url("Images/background.jpg");
+        background-position: -100%;
+        color: white;
+        font-weight: bold;
     }
+
+
     form {
 
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
 
-
+    a {
+        color: white;
     }
 
     #inscription {
         text-align: center;
+
     }
 
 </style>

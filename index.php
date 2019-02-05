@@ -22,6 +22,10 @@ $az=0;
         height: 95vh;
         justify-content: center;
         align-items: center;
+        background-image: url("Images/background.jpg");
+        background-position: -100%;
+        color: white;
+        font-weight: bold;
 
     }
     form {
@@ -30,10 +34,14 @@ $az=0;
         justify-content: center;
         flex-direction: column;
 
+    }
 
+    a {
+        color: white;
     }
 
     #connection {
+
         text-align: center;
     }
 
