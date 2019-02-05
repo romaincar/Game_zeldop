@@ -21,6 +21,10 @@
         height: 95vh;
         justify-content: center;
         align-items: center;
+        background-image: url("Images/background.jpg");
+        background-position: -100%;
+        color: white;
+        font-weight: bold;
 
     }
     form {
@@ -29,10 +33,14 @@
         justify-content: center;
         flex-direction: column;
 
+    }
 
+    a {
+        color: white;
     }
 
     #connection {
+
         text-align: center;
     }
 
