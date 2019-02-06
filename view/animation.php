@@ -18,22 +18,31 @@
 </head>
 <body>
 <div id="viewport">
-    <div id="zone red"></div>
+    <div id="field" style="height: 700px; width: 700px; border: solid black" >
+
     <div id="kdeplacement" style="top:200px; left:200px;"></div>
 
 </div>
-
+</div>
 
 </body>
 </html>
 <style>
+    body {
+background-image: url("../Images/background.jpg");
+      background-position: right;
+    }
+    #field {
+        background-image: url("../Images/trees-and-bushes.png");
+        background-size: 200px;
+    }
+
     #viewport
     {
         position: relative;
         height: 500px;
         width: 500px;
         margin: auto;
-
 
     }
 
