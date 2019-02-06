@@ -61,6 +61,6 @@
     <input type="submit" name="Connectez-vous">
     </form>
     <br>
-<a href="inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
+<a href="view/inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
 </div>
 
