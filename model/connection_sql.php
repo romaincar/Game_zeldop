@@ -56,7 +56,6 @@ class connection_sql
         filter_var($this->motdepasse, FILTER_SANITIZE_STRING);
 
 
-        $this->sql = $this->bdd->prepare("INSERT INTO `inscription_login` (nom, prenom, pseudo, motdepasse, mail, admin) VALUES (?,?,?,?,?);");
         $admin = 0;
         $this->sql->bindParam(1, $nom);
         $this->sql->bindParam(2, $prenom);

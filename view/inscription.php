@@ -15,47 +15,16 @@ require '../controller/connection_controller.php';
 <head>
     <meta charset="UTF-8">
     <title>Bienvenue sur Game_zeldop</title>
+    <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
-<style>
 
-    body {
-        display: flex;
-        width: 99%;
-        height: 95vh;
-        justify-content: center;
-        align-items: center;
-        background-image: url("../Images/background.jpg");
-        background-position: -100%;
-        color: white;
-        font-family: "Noto Sans";
-    }
-
-
-    form {
-
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    a {
-        color: white;
-    }
-
-    #inscription {
-        text-align: center;
-        line-height: 30px;
-
-    }
-
-</style>
 <body>
 
 <div id = "inscription">
 <h1>Bienvenue sur Game_zeldop ! </h1>
 
 <h2>Inscription</h2>
-<form action="../controller/control_inscription.php" method="post">
+<form action="" method="post">
     <label>Votre Nom : </label><input type="text" name = "nom"><br>
     <label>Votre Prenom : </label><input type="text" name = "prenom"><br>
     <label>Votre Pseudo : </label><input type = "text" name = "pseudo"><br>
@@ -67,8 +36,16 @@ require '../controller/connection_controller.php';
 </form>
 </div>
 
-
 </body>
 </html>
 
+<?php
+$nom = $_REQUEST['nom'];
+$prenom = $_REQUEST['prenom'];
+$pseudo = $_REQUEST['pseudo'];
+$mail = $_REQUEST['mail'];
+$motdepasse = $_REQUEST['mdp'];
 
+$test = new connection_controller();
+$test->inscriptionconn($nom, $prenom, $pseudo, $motdepasse, $mail);
+?>
