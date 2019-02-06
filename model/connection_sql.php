@@ -98,7 +98,7 @@ class connection_sql
                 session_start();
 
                 $_SESSION['username'] = $this->row['pseudo'];
-
+                $_SESSION['admin'] = $this->row['admin'];
 
                 header("Location:test.php");
 
@@ -109,6 +109,19 @@ class connection_sql
                 session_start();
 
                 $_SESSION['username'] = $this->row['pseudo'];
+                $_SESSION['admin'] = $this->row['admin'];
+
+
+                header("Location:test.php");
+
+
+            }
+            if ($this->row['admin'] == 2) {
+
+                session_start();
+
+                $_SESSION['username'] = $this->row['pseudo'];
+                $_SESSION['admin'] = $this->row['admin'];
 
 
                 header("Location:test.php");
@@ -117,7 +130,7 @@ class connection_sql
             }
         } else {
 
-            echo "Pas capable d'ecrire son login !";
+            echo "Login / Mot de passe incorrect.";
            // header("Location:login.php");
 
         }

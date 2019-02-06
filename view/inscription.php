@@ -55,7 +55,7 @@ require '../controller/connection_controller.php';
 <h1>Bienvenue sur Game_zeldop ! </h1>
 
 <h2>Inscription</h2>
-<form action="../controller/conn_control.php" method="post">
+<form action="../controller/control_inscription.php" method="post">
     <label>Votre Nom : </label><input type="text" name = "nom"><br>
     <label>Votre Prenom : </label><input type="text" name = "prenom"><br>
     <label>Votre Pseudo : </label><input type = "text" name = "pseudo"><br>
