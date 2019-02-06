@@ -100,7 +100,6 @@ class connection_sql
                 $_SESSION['username'] = $this->row['pseudo'];
 
 
-                header("Location:test.php");
 
             }
 
@@ -111,7 +110,6 @@ class connection_sql
                 $_SESSION['username'] = $this->row['pseudo'];
 
 
-                header("Location:test.php");
 
 
             }

@@ -55,10 +55,10 @@
 
 <h2>Connectez-vous</h2>
 
-<form action="" method="post">
+<form action="controller/log_control.php" method="post">
     <label>Votre Pseudo : </label><input type = "text" name = "logPseudo"><br>
     <label>Votre mot de passe : </label><input type = "text" name = "logMdp"><br>
-    <input type="submit" name="Connectez-vous">
+    <a href="index.php?controller=utilisateurs&action=logUsers">Connectez vous</a>
     </form>
     <br>
 <a href="view/inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
