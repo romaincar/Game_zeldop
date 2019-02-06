@@ -7,7 +7,7 @@
  */
 
 
-require "../model/connection_sql.php";
+require_once "../model/connection_sql.php";
 
 
 class connection_controller
@@ -21,10 +21,10 @@ class connection_controller
 
     }
 
-    public function inscriptionconn()
+    public function inscriptionconn($nom, $prenom, $pseudo, $motdepasse, $mail)
     {
-        $this->connection->inscription();
-        include '../view/inscription.php';
+        $this->connection->inscription($nom, $prenom, $pseudo, $motdepasse, $mail);
+        //include '../view/inscription.php';
 
     }
 
@@ -32,7 +32,6 @@ class connection_controller
     {
 
         $this->connection->log();
-        include '../view/index.php';
 
     }
 

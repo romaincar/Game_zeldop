@@ -56,7 +56,6 @@ class connection_sql
         filter_var($this->motdepasse, FILTER_SANITIZE_STRING);
 
 
-        $this->sql = $this->bdd->prepare("INSERT INTO `inscription_login` (nom, prenom, pseudo, motdepasse, mail, admin) VALUES (?,?,?,?,?);");
         $admin = 0;
         $this->sql->bindParam(1, $nom);
         $this->sql->bindParam(2, $prenom);
@@ -98,7 +97,7 @@ class connection_sql
                 session_start();
 
                 $_SESSION['username'] = $this->row['pseudo'];
-
+                $_SESSION['admin'] = $this->row['admin'];
 
 
             }
@@ -108,6 +107,19 @@ class connection_sql
                 session_start();
 
                 $_SESSION['username'] = $this->row['pseudo'];
+                $_SESSION['admin'] = $this->row['admin'];
+
+
+                header("Location:test.php");
+
+
+            }
+            if ($this->row['admin'] == 2) {
+
+                session_start();
+
+                $_SESSION['username'] = $this->row['pseudo'];
+                $_SESSION['admin'] = $this->row['admin'];
 
 
 
@@ -115,7 +127,7 @@ class connection_sql
             }
         } else {
 
-            echo "Pas capable d'ecrire son login !";
+            echo "Login / Mot de passe incorrect.";
            // header("Location:login.php");
 
         }

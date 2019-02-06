@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    width: 99%;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Images/background.jpg");
+    background-position: -100%;
+    color: white;
+    font-family: "Noto Sans";
+}
+
+
+form {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+}
+
+#inscription {
+    text-align: center;
+    line-height: 30px;
+
+}
+
+#connection {
+
+    text-align: center;
+    line-height: 30px;
+
+}
