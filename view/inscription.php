@@ -4,7 +4,7 @@
  * User: Administrateur
  * Date: 05/02/2019
 */
-require '../model/connection_sql.php';
+
 require '../controller/connection_controller.php';
 
 ?>
@@ -55,7 +55,7 @@ require '../controller/connection_controller.php';
 <h1>Bienvenue sur Game_zeldop ! </h1>
 
 <h2>Inscription</h2>
-<form action="" method="post">
+<form action="../controller/conn_control.php" method="post">
     <label>Votre Nom : </label><input type="text" name = "nom"><br>
     <label>Votre Prenom : </label><input type="text" name = "prenom"><br>
     <label>Votre Pseudo : </label><input type = "text" name = "pseudo"><br>
@@ -70,4 +70,5 @@ require '../controller/connection_controller.php';
 
 </body>
 </html>
+
 

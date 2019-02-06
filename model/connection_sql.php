@@ -8,12 +8,6 @@
 
 class connection_sql
 {
-    private $nom;
-    private $prenom;
-    private $pseudo;
-    private $motdepasse;
-    private $mail;
-
 
     public function __construct()
     {
@@ -27,23 +21,9 @@ class connection_sql
 
     public function inscription($nom, $prenom, $pseudo, $motdepasse, $mail)
     {
-        $this->nom = (isset($_POST['nom']) ? $_POST['nom']:null);
-        filter_var($this->nom, FILTER_SANITIZE_STRING);
-
-        $this->prenom = (isset($_POST['prenom']) ? $_POST['prenom']:null);
-        filter_var($this->prenom, FILTER_SANITIZE_STRING);
-
-        $this->pseudo = (isset($_POST['pseudo']) ? $_POST['pseudo']:null);
-        filter_var($this->pseudo, FILTER_SANITIZE_STRING);
-
-        $this->mail = (isset($_POST['mail']) ? $_POST['mail']:null);
-        filter_var($this->mail, FILTER_SANITIZE_STRING);
-
-        $this->motdepasse = (isset($_POST['mdp']) ? $_POST['mdp']:null);
-        filter_var($this->motdepasse, FILTER_SANITIZE_STRING);
 
 
-        $this->sql = $this->bdd->prepare ("INSERT INTO `inscription_login` (nom, prenom, pseudo, motdepasse, mail, admin) VALUES (?,?,?,?,?);");
+        $this->sql = $this->bdd->prepare ("INSERT INTO `inscriptions_login` (nom, prenom, pseudo, `password`, mail, admin) VALUES (?,?,?,?,?,?);");
         $admin = 0;
         $this->sql->bindParam(1, $nom);
         $this->sql->bindParam(2, $prenom);
@@ -52,7 +32,7 @@ class connection_sql
         $this->sql->bindParam(5, $mail);
         $this->sql->bindParam(6, $admin);
         $this->sql->execute();
-        return "exécuté !";
+        echo "Création du compte terminée.";
     }
 
     public function modifier($id, $nom, $prenom, $pseudo, $motdepasse, $mail, $admin)
