@@ -11,7 +11,7 @@ class connection_sql
     public function __construct()
     {
         try {
-            $this->bdd = new PDO('mysql:host=localhost;dbname=game_zeldop_test;charset=utf8', 'root', '');
+            $this->bdd = new PDO('mysql:host=localhost;dbname=game_zeldop;charset=utf8', 'root', '');
             echo "Connecté.";
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
