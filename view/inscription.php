@@ -4,6 +4,8 @@
  * User: Administrateur
  * Date: 05/02/2019
 */
+require '../model/connection_sql.php';
+require '../controller/connection_controller.php';
 
 ?>
 
