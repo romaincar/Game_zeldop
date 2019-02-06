@@ -25,7 +25,7 @@
         background-image: url("Images/background.jpg");
         background-position: -100%;
         color: white;
-        font-weight: bold;
+        font-family: "Noto Sans";
 
     }
     form {
@@ -43,6 +43,8 @@
     #connection {
 
         text-align: center;
+        line-height: 30px;
+
     }
 
 </style>
@@ -59,6 +61,6 @@
     <input type="submit" name="Connectez-vous">
     </form>
     <br>
-<a href="inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
+<a href="view/inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
 </div>
 

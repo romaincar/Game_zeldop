@@ -4,6 +4,8 @@
  * User: Administrateur
  * Date: 05/02/2019
 */
+require '../model/connection_sql.php';
+require '../controller/connection_controller.php';
 
 ?>
 
@@ -22,10 +24,10 @@
         height: 95vh;
         justify-content: center;
         align-items: center;
-        background-image: url("Images/background.jpg");
+        background-image: url("../Images/background.jpg");
         background-position: -100%;
         color: white;
-        font-weight: bold;
+        font-family: "Noto Sans";
     }
 
 
@@ -42,6 +44,7 @@
 
     #inscription {
         text-align: center;
+        line-height: 30px;
 
     }
 
@@ -60,7 +63,7 @@
     <label>Votre mot de passe : </label><input type="password" name = "mdp"><br>
     <input type ="submit" value="Inscrivez-vous">
     <br>
-    <a href="index.php">Déjà inscrit ? Cliquez pour vous connecter</a>
+    <a href="../index.php">Déjà inscrit ? Cliquez pour vous connecter</a>
 </form>
 </div>
 
