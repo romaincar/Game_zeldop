@@ -45,12 +45,12 @@
 
     #kdeplacement
     {
-background-image:url("../armored_skeleton_slash.gif");
+        background-image:url("../Images/armored_skeleton_slash.gif");
         width: 60px;
         height: 65px;
         position: absolute;
-        top: 200px;
-        left: 200px;
+        top: 100px;
+        left: 100px;
     }
 
     #buttons
@@ -96,31 +96,5 @@ background-image:url("../armored_skeleton_slash.gif");
         }
 
     });
-    switch (e.which)
-        window.onkeydown=function (e) {
 
-            {
-            case 37:
-                document.getElementById("kdeplacement").style.top = kdeplacement + "px";
-                addEventListener(onkeydown);
-                break;
-            case 39:
-                document.getElementById("kdeplacement").style.left = kdeplacement + "px";
-            addEventListener(onkeydown);
-                break;
-            case 38:
-
-                document.getElementById("kdeplacement").style.right = kdeplacement + "px";
-            addEventListener(onkeydown);
-                break;
-            case 40:
-
-                document.getElementById("kdeplacement").style.down = kdeplacement + "px";
-            addEventListener(onkeydown);
-                break;
-            default:
-                break;
-            }
-
-        };
 </script>
