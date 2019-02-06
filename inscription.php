@@ -25,7 +25,7 @@
         background-image: url("Images/background.jpg");
         background-position: -100%;
         color: white;
-        font-weight: bold;
+        font-family: "Noto Sans";
     }
 
 
@@ -42,6 +42,7 @@
 
     #inscription {
         text-align: center;
+        line-height: 30px;
 
     }
 

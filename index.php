@@ -25,7 +25,7 @@ $az=0;
         background-image: url("Images/background.jpg");
         background-position: -100%;
         color: white;
-        font-weight: bold;
+        font-family: "Noto Sans";
 
     }
     form {
@@ -43,6 +43,8 @@ $az=0;
     #connection {
 
         text-align: center;
+        line-height: 30px;
+
     }
 
 </style>
