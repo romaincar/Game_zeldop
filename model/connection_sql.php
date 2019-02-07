@@ -117,6 +117,7 @@ if (!empty($this->sql))
 
     $_SESSION['username'] = $this->sql['pseudo'];
     $_SESSION['admin'] = $this->sql['admin'];
+    $_SESSION['id'] = $this->sql['id'];
 
     header("Location:view/test.php");
 }
