@@ -27,8 +27,9 @@ class connection_sql
     {
         try {
             $this->bdd = new PDO('mysql:host=localhost;dbname=game_zeldop;charset=utf8', 'root', '');
-            echo "Connecté.";
-        } catch (Exception $e) {
+        }
+        catch (Exception $e)
+        {
             die('Erreur : ' . $e->getMessage());
         }
 
@@ -65,8 +66,14 @@ class connection_sql
         $this->sql->bindParam(4, $motdepasse);
         $this->sql->bindParam(5, $mail);
         $this->sql->bindParam(6, $admin);
-        $this->sql->execute();
-        echo "Création du compte terminée.";
+        if ($this->nom !== "" && $this->nom !== null && $this->prenom !== "" && $this->pseudo !== "" && $this->mail !== "" && $this->motdepasse !== ""  )
+        {
+            $this->sql->execute();
+        }
+        else
+        {
+
+        }
     }
 
     public function modifier($id, $nom, $prenom, $pseudo, $motdepasse, $mail, $admin)

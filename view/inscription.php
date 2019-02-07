@@ -4,8 +4,6 @@
  * User: Administrateur
  * Date: 05/02/2019
 */
-
-
 ?>
 
 
@@ -24,6 +22,7 @@
 <h1>Bienvenue sur Game_zeldop ! </h1>
 
 <h2>Inscription</h2>
+
 <form action="" method="post">
     <label>Votre Nom : </label><input type="text" name = "nom"><br>
     <label>Votre Prenom : </label><input type="text" name = "prenom"><br>
@@ -40,10 +39,9 @@
 </html>
 
 <?php
-$nom = isset($_REQUEST['nom']);
-$prenom = isset($_REQUEST['prenom']);
-$pseudo = isset($_REQUEST['pseudo']);
-$mail = isset($_REQUEST['mail']);
-$motdepasse = isset($_REQUEST['mdp']);
-
+$nom = (isset($_REQUEST['nom'])? $_REQUEST['nom']:null);
+$prenom = (isset($_REQUEST['prenom'])? $_REQUEST['prenom']:null);
+$pseudo = (isset($_REQUEST['pseudo'])? $_REQUEST['pseudo']:null);
+$mail = (isset($_REQUEST['mail'])? $_REQUEST['mail']:null);
+$motdepasse = (isset($_REQUEST['mdp'])? $_REQUEST['mdp']:null);
 ?>
