@@ -9,12 +9,11 @@
 
 if (isset($_GET['page'])) {
 
-    switch($_GET['page'])
-    {
+    switch($_GET['page']) {
         case "login":
 
             //  include "model/connection_sql.php";
-           // include "view/login.php";
+            // include "view/login.php";
 
             require_once "controller/connection_controller.php";
 
