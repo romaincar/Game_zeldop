@@ -20,6 +20,8 @@ class connection_sql
     private $con;
     private $sql;
     private $row;
+    private $logPseudo;
+    private $logMdp;
 
     public function __construct()
     {
@@ -30,8 +32,8 @@ class connection_sql
             die('Erreur : ' . $e->getMessage());
         }
 
-        //$this->pass = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
-        //$this->login = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
+        $this->pass = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
+        $this->login = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
 
     }
 
@@ -81,56 +83,41 @@ class connection_sql
         echo "Ligne " . $id . " totalement supprimée.";
     }
 
-    public function log()
+    public function log($logPseudo, $logMdp)
     {
-        global $con;
+       //global $con;
 
-        $req = "SELECT * FROM `inscriptions_login` WHERE pseudo = '$this->login'  and  password = '$this->pass'";
+        $this->logMdp = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
+        filter_var($this->logMdp, FILTER_SANITIZE_STRING);
 
-        $result = $con->query($req);
+        $this->logPseudo = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
+        filter_var($this->logPseudo, FILTER_SANITIZE_STRING);
 
-        $this->row = $result->fetch_assoc();
+        //$this->req = $this->bdd->prepare("SELECT * FROM `inscriptions_login` WHERE pseudo = $this->logPseudo  and  password = $this->logMdp");
 
-        if (isset($this->row['id'])) {
-            if ($this->row['admin'] == 0) {
-
-                session_start();
-
-                $_SESSION['username'] = $this->row['pseudo'];
-                $_SESSION['admin'] = $this->row['admin'];
-
-
-            }
-
-            if ($this->row['admin'] == 1) {
-
-                session_start();
-
-                $_SESSION['username'] = $this->row['pseudo'];
-                $_SESSION['admin'] = $this->row['admin'];
-
-
-                header("Location:test.php");
-
-
-            }
-            if ($this->row['admin'] == 2) {
-
-                session_start();
-
-                $_SESSION['username'] = $this->row['pseudo'];
-                $_SESSION['admin'] = $this->row['admin'];
-
-
-
-
-            }
-        } else {
-
-            echo "Login / Mot de passe incorrect.";
-           // header("Location:login.php");
-
+        try {
+            $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login` WHERE pseudo =".$this->logPseudo."  and  password = ".$this->logMdp);
+            echo "Envoyé à la bdd";
         }
+        catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+if (!empty($this->sql))
+{
+    $this->sql = $this->sql->fetch();
+    session_start();
+
+    $_SESSION['username'] = $this->sql['pseudo'];
+    $_SESSION['admin'] = $this->sql['admin'];
+
+    header("Location:view/test.php");
+}
+else
+{
+    header("Location:view/inscription.php");
+}
+
 
 
     }
