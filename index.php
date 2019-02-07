@@ -25,7 +25,10 @@ if (isset($_GET['page'])) {
 
             case "inscription":
 
-                require "controller/connection_controller.php";
+                require_once"controller/connection_controller.php";
+
+                $retour = new connection_controller();
+                $retour->inscription();
 
     }
 

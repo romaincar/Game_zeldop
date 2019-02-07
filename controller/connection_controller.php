@@ -36,6 +36,11 @@ class connection_controller
         include "view/login.php";
 
     }
+
+    public function inscription() {
+
+        include "view/inscription.php";
+    }
     public function compare()
     {
         include "view/login.php";
