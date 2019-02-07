@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bienvenue sur Game_zeldop</title>
-    <link rel="stylesheet" type="text/css" href="../css.css">
+    <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
 
@@ -25,9 +25,14 @@
     <form action="" method="post">
         <label>Votre Pseudo : </label><input type = "text" name = "logPseudo"><br>
         <label>Votre mot de passe : </label><input type = "text" name = "logMdp"><br>
+        <input type="hidden" name="action" value="login">
         <input type="submit" name="Connectez-vous">
     </form>
     <br>
-    <a href="view/inscription.php">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
+    <a href="index.php?page=inscription">Pas encore inscrit ? Inscrivez-vous en cliquant sur ce lien</a>
 </div>
+<?php
+$logPseudo = isset($_REQUEST["logPseudo"]);
+$logMdp = isset($_REQUEST['logMdp']);
+
 

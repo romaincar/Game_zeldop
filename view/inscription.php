@@ -31,7 +31,7 @@
     <label>Votre mot de passe : </label><input type="password" name = "mdp"><br>
     <input type ="submit" value="Inscrivez-vous">
     <br>
-    <a href="../index.php">Déjà inscrit ? Cliquez pour vous connecter</a>
+    <a href="index.php?page=login">Déjà inscrit ? Cliquez pour vous connecter</a>
 </form>
 </div>
 

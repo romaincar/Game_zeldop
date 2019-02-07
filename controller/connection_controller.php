@@ -26,10 +26,24 @@ class connection_controller
 
     }
 
+    public function login() {
+
+        include "view/login.php";
+
+    }
     public function compare()
     {
+        include "view/login.php";
+        require_once "model/connection_sql.php";
 
-        $this->connection->log();
+        $logMdp = isset($_POST['logMdp']);
+        $logPseudo = isset($_POST['logPseudo']);
+
+        $this->connection = new connection_sql();
+        $this->connection->log($logPseudo, $logMdp);
+
+
+        //inclure une vue pour confirmer a l'utilisateur qu'il est bien logué
 
     }
 
