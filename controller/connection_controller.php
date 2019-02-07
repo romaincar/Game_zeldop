@@ -15,15 +15,20 @@ class connection_controller
     public function __construct()
     {
 
-        $this->connection = new connection_sql();
-
     }
 
-    public function inscriptionconn($nom, $prenom, $pseudo, $motdepasse, $mail)
+    public function inscriptionconn()
     {
-        include_once "model/connection_sql.php";
+        include "view/inscription.php";
+        require_once "model/connection_sql.php";
+        $nom = (isset($_REQUEST['nom'])? $_REQUEST['nom']:null);
+        $prenom = (isset($_REQUEST['prenom'])? $_REQUEST['prenom']:null);
+        $pseudo = (isset($_REQUEST['pseudo'])? $_REQUEST['pseudo']:null);
+        $mail = (isset($_REQUEST['mail'])? $_REQUEST['mail']:null);
+        $motdepasse = (isset($_REQUEST['mdp'])? $_REQUEST['mdp']:null);
+        $this->connection = new connection_sql();
         $this->connection->inscription($nom, $prenom, $pseudo, $motdepasse, $mail);
-include_once "view/inscription.php";
+
     }
 
     public function compare()

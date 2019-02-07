@@ -30,8 +30,8 @@ class connection_sql
             die('Erreur : ' . $e->getMessage());
         }
 
-        $this->pass = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
-        $this->login = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
+        //$this->pass = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
+        //$this->login = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
 
     }
 
