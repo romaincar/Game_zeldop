@@ -7,8 +7,6 @@
  */
 
 
-require_once "../model/connection_sql.php";
-
 
 class connection_controller
 {
@@ -23,9 +21,9 @@ class connection_controller
 
     public function inscriptionconn($nom, $prenom, $pseudo, $motdepasse, $mail)
     {
+        include_once "model/connection_sql.php";
         $this->connection->inscription($nom, $prenom, $pseudo, $motdepasse, $mail);
-        //include '../view/inscription.php';
-
+include_once "view/inscription.php";
     }
 
     public function compare()

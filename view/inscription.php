@@ -5,7 +5,6 @@
  * Date: 05/02/2019
 */
 
-require '../controller/connection_controller.php';
 
 ?>
 
@@ -15,6 +14,7 @@ require '../controller/connection_controller.php';
 <head>
     <meta charset="UTF-8">
     <title>Bienvenue sur Game_zeldop</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
     <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 
@@ -40,12 +40,10 @@ require '../controller/connection_controller.php';
 </html>
 
 <?php
-$nom = $_REQUEST['nom'];
-$prenom = $_REQUEST['prenom'];
-$pseudo = $_REQUEST['pseudo'];
-$mail = $_REQUEST['mail'];
-$motdepasse = $_REQUEST['mdp'];
+$nom = isset($_REQUEST['nom']);
+$prenom = isset($_REQUEST['prenom']);
+$pseudo = isset($_REQUEST['pseudo']);
+$mail = isset($_REQUEST['mail']);
+$motdepasse = isset($_REQUEST['mdp']);
 
-$test = new connection_controller();
-$test->inscriptionconn($nom, $prenom, $pseudo, $motdepasse, $mail);
 ?>
