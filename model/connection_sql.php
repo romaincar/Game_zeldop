@@ -99,8 +99,6 @@ class connection_sql
         $this->logPseudo = (isset($_POST['logPseudo'])? $_POST['logPseudo']: NULL);
         filter_var($this->logPseudo, FILTER_SANITIZE_STRING);
 
-        //$this->req = $this->bdd->prepare("SELECT * FROM `inscriptions_login` WHERE pseudo = $this->logPseudo  and  password = $this->logMdp");
-
         try {
             $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login` WHERE pseudo ='$this->logPseudo'  and  password = '$this->logMdp'");
             echo "Envoyé à la bdd";
@@ -124,8 +122,6 @@ else
 {
     header("Location:view/inscription.php");
 }
-
-
 
     }
 

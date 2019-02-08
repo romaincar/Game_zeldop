@@ -47,7 +47,6 @@ class connection_controller
         $this->connection = new connection_sql();
         $this->connection->log($logPseudo, $logMdp);
 
-
         //inclure une vue pour confirmer a l'utilisateur qu'il est bien logué
 
     }
