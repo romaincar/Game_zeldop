@@ -9,6 +9,9 @@ body {
     color: white;
     font-family: "Noto Sans";
 }
+#fond_onglet{
+    background-image: url("Images/epée_z.jpg");
+}
 
 form {
 
@@ -27,10 +30,30 @@ a {
 
 }
 
-#connection, #infosCompte {
+#connection {
 
     text-align: center;
     line-height: 30px;
 
 }
+#onglet{
+    text-align: center;
+    line-height: 60px;
+font-size: xx-large;
+}
 
+#liens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#titre{
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#play{
+    left: 20px;
+}

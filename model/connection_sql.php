@@ -120,7 +120,7 @@ if (!empty($this->sql))
     $_SESSION['id'] = $this->sql['id'];
     $_SESSION['mdp'] = $this->sql['password'];
 
-    header("Location:view/espace_modi_compte.php");
+    header("Location:view/page_onglet.php");
 }
 else
 {
