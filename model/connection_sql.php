@@ -112,9 +112,13 @@ if (!empty($this->sql))
     $this->sql = $this->sql->fetch();
     session_start();
 
-    $_SESSION['username'] = $this->sql['pseudo'];
+    $_SESSION['pseudo'] = $this->sql['pseudo'];
+    $_SESSION['nom'] = $this->sql['nom'];
+    $_SESSION['prenom'] = $this->sql['prenom'];
     $_SESSION['admin'] = $this->sql['admin'];
+    $_SESSION['mail'] = $this->sql['mail'];
     $_SESSION['id'] = $this->sql['id'];
+    $_SESSION['mdp'] = $this->sql['password'];
 
     header("Location:view/espace_modi_compte.php");
 }
@@ -131,6 +135,8 @@ else
         $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login`");
 
         $this->sql = $this->sql->fetch();
+
+       // return $this->sql;
 
         include "../view/espace_modi_compte.php";
 

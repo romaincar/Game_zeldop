@@ -28,9 +28,10 @@ a {
 
 }
 
-#connection {
+#connection, #infosCompte {
 
     text-align: center;
     line-height: 30px;
 
 }
+

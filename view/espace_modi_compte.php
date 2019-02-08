@@ -1,11 +1,7 @@
 <?php
 session_start();
-//include"../controller/connection_controller.php";
-//$one = new connection_controller();
-//$one->modifEspace();
-
 ?>
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -17,46 +13,55 @@ session_start();
 
     <?php
 
-    if ($_SESSION['id'] == 0) {
+    if ($_SESSION['admin'] == 0) {
 
 
-    ?>
+            ?>
 
-<h1>vos informations de compte</h1>
+<div id = 'infosCompte'>
 
-<p>Nom : <?php echo $this->sql['nom']; ?></p>
-<p>Nom : <?php echo $this->sql['prenom']; ?></p>
-<p>Nom : <?php echo $this->sql['pseudo']; ?></p>
-<p>Nom : <?php echo $this->sql['mail']; ?></p>
+    <h1>vos informations de compte</h1>
 
-<?php
+    <ul>
+            <li>Votre nom : <?php echo $_SESSION['nom']; ?></li>
+            <li>Votre Prenom : <?php echo $_SESSION['prenom']; ?></li>
+            <li>Votre Pseudo : <?php echo $_SESSION['pseudo']; ?></li>
+            <li>Votre Mail : <?php echo $_SESSION['mail']; ?></li>
 
-}
+    </ul>
+</div>
+            <?php
 
+
+
+    }
 
 ?>
+
+    <?php
+
+    if ($_SESSION['admin'] == 1) {
+
+    ?>
 <div id="inscription">
     <h1>Espace modification ! </h1>
-    <?php
-    while ($donnees = $result->fetch_assoc()) {
-        $val = $donnees['id'];
 
         ?>
         <div>
-            <a href="delete.php?id=<?= $val ?>"><img src="supprimer.png" height="40" width="40" alt="Supprimer"></a> <a
-                    href="modification.php?id=<?php echo $donnees['id'] ?>"><img src="modifier.png" height="40"
+            <a href="delete.php?id=<?= $_SESSION['id'] ?>"><img src="supprimer.png" height="40" width="40" alt="Supprimer"></a> <a
+                    href="modification.php?id=<?php echo $_SESSION['id'] ?>"><img src="modifier.png" height="40"
                                                                                  width="40" alt="Modifier"></a>
             <label id="nom" class="grpnom">Votre Nom : </label>
-            <div class="grpnom" id="echonom"><?php echo ['nom'] ?></div>
+            <div class="grpnom" id="echonom"><?php echo $_SESSION['nom'] ?></div>
             <br>
             <label id="prenom" class="grpprenom">Votre Prenom : </label>
-            <div class="grpprenom" id="echoprenom"><?php echo ['prenom'] ?></div>
+            <div class="grpprenom" id="echoprenom"><?php echo $_SESSION['prenom']  ?></div>
             <br>
             <label id="mail" class="grpmail">Votre e-mail : </label>
-            <div class="grpmail" id="echomail"><?php echo ['mail'] ?></div>
+            <div class="grpmail" id="echomail"><?php echo $_SESSION['mail'] ?></div>
             <br>
             <label id="mdp" class="grpmdp">Votre mot de passe : </label>
-            <div class="grpmdp" id="echomdp"><?php echo ['mdp'] ?></div>
+            <div class="grpmdp" id="echomdp"><?php echo $_SESSION['mdp'] ?></div>
             <br>
             <input id="mod" type="submit" value="modifier">
             <br>
