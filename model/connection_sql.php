@@ -116,7 +116,7 @@ if (!empty($this->sql))
     $_SESSION['admin'] = $this->sql['admin'];
     $_SESSION['id'] = $this->sql['id'];
 
-    header("Location:view/espace_modi_compte.php");
+    header("Location:view/page_onglet.php");
 }
 else
 {
