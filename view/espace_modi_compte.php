@@ -1,9 +1,10 @@
-
 <?php
-
+session_start();
+//include"../controller/connection_controller.php";
+//$one = new connection_controller();
+//$one->modifEspace();
 
 ?>
-
 !DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,26 +13,55 @@
     <link rel="stylesheet" type="text/css" href="css.css">
     <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
-
 <body>
 
-<div id = "inscription">
-    <h1>Espace modification ! </h1>
-<?php
-    while($donnees = $result->fetch_assoc()){
-        $val = $donnees['id'];
+    <?php
+
+    if ($_SESSION['id'] == 0) {
+
 
     ?>
-    <div>
-        <a href="delete.php?id=<?= $val ?>"><img src="supprimer.png" height="40" width="40" alt="Supprimer"></a> <a href="modification.php?id=<?php echo $donnees['id']?>"><img src="modifier.png" height="40" width="40" alt="Modifier"></a>
-        <label id="nom" class="grpnom">Votre Nom : </label><div class="grpnom" id="echonom"><?php echo ['nom']?></div><br>
-        <label id="prenom" class="grpprenom">Votre Prenom : </label><div class="grpprenom" id="echoprenom"><?php echo ['prenom']?></div><br>
-        <label id="mail" class="grpmail">Votre e-mail : </label><div class="grpmail" id="echomail"><?php echo ['mail']?></div><br>
-        <label id="mdp" class="grpmdp">Votre mot de passe : </label><div class="grpmdp" id="echomdp"><?php echo ['mdp']?></div><br>
-        <input id="mod" type ="submit" value="modifier">
-        <br>
-    </div>
+
+<h1>vos informations de compte</h1>
+
+<p>Nom : <?php echo $this->sql['nom']; ?></p>
+<p>Nom : <?php echo $this->sql['prenom']; ?></p>
+<p>Nom : <?php echo $this->sql['pseudo']; ?></p>
+<p>Nom : <?php echo $this->sql['mail']; ?></p>
+
+<?php
+
+}
+
+
+?>
+<div id="inscription">
+    <h1>Espace modification ! </h1>
     <?php
+    while ($donnees = $result->fetch_assoc()) {
+        $val = $donnees['id'];
+
+        ?>
+        <div>
+            <a href="delete.php?id=<?= $val ?>"><img src="supprimer.png" height="40" width="40" alt="Supprimer"></a> <a
+                    href="modification.php?id=<?php echo $donnees['id'] ?>"><img src="modifier.png" height="40"
+                                                                                 width="40" alt="Modifier"></a>
+            <label id="nom" class="grpnom">Votre Nom : </label>
+            <div class="grpnom" id="echonom"><?php echo ['nom'] ?></div>
+            <br>
+            <label id="prenom" class="grpprenom">Votre Prenom : </label>
+            <div class="grpprenom" id="echoprenom"><?php echo ['prenom'] ?></div>
+            <br>
+            <label id="mail" class="grpmail">Votre e-mail : </label>
+            <div class="grpmail" id="echomail"><?php echo ['mail'] ?></div>
+            <br>
+            <label id="mdp" class="grpmdp">Votre mot de passe : </label>
+            <div class="grpmdp" id="echomdp"><?php echo ['mdp'] ?></div>
+            <br>
+            <input id="mod" type="submit" value="modifier">
+            <br>
+        </div>
+        <?php
     }
     ?>
 </div>

@@ -92,7 +92,6 @@ class connection_sql
 
     public function log($logPseudo, $logMdp)
     {
-       //global $con;
 
         $this->logMdp = (isset($_POST['logMdp'])? $_POST['logMdp']: NULL);
         filter_var($this->logMdp, FILTER_SANITIZE_STRING);
@@ -103,7 +102,7 @@ class connection_sql
         //$this->req = $this->bdd->prepare("SELECT * FROM `inscriptions_login` WHERE pseudo = $this->logPseudo  and  password = $this->logMdp");
 
         try {
-            $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login` WHERE pseudo =".$this->logPseudo."  and  password = ".$this->logMdp);
+            $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login` WHERE pseudo ='$this->logPseudo'  and  password = '$this->logMdp'");
             echo "Envoyé à la bdd";
         }
         catch (Exception $e) {
@@ -119,13 +118,25 @@ if (!empty($this->sql))
     $_SESSION['admin'] = $this->sql['admin'];
     $_SESSION['id'] = $this->sql['id'];
 
-    header("Location:view/test.php");
+    header("Location:view/espace_modi_compte.php");
 }
 else
 {
     header("Location:view/inscription.php");
 }
 
+
+
+    }
+
+    public function espaces() {
+
+
+        $this->sql = $this->bdd->query("SELECT * FROM `inscriptions_login`");
+
+        $this->sql = $this->sql->fetch();
+
+        include "../view/espace_modi_compte.php";
 
 
     }

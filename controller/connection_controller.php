@@ -52,5 +52,14 @@ class connection_controller
 
     }
 
+   public function modifEspace() {
+
+        require_once "model/connection_sql.php";
+
+        $this->connection = new connection_sql();
+        $this->connection->espaces();
+
+   }
+
 
 }
